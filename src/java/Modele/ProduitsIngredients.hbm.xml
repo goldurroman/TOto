@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-09-03 11:44:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="Modele.ProduitsIngredients" optimistic-lock="version" schema="ETEAM1" table="PRODUITS_INGREDIENTS">
+    <composite-id class="Modele.ProduitsIngredientsId" name="id">
+      <key-property name="codeProduit" type="string">
+        <column length="6" name="CODE_PRODUIT"/>
+      </key-property>
+      <key-property name="idIngredients" type="string">
+        <column length="3" name="CODE_LANGUE"/>
+      </key-property>
+    </composite-id>
+   <many-to-one class="Modele.Ingredients" fetch="select" insert="false" name="ingredients" update="false">
+      <column length="3" name="ID_INGREDIENT" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="Modele.Produits" fetch="select" insert="false" name="produits" update="false">
+      <column length="6" name="CODE_PRODUIT" not-null="true"/>
+    </many-to-one>
+    
+  </class>
+</hibernate-mapping>

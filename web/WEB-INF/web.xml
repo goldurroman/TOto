@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <filter>
+        <filter-name>ConnexionUtilisateurFilter</filter-name>
+        <filter-class>Filtres.ConnexionUtilisateurFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ConnexionUtilisateurFilter</filter-name>
+        <servlet-name>ConnexionUtilisateur</servlet-name>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>MainServlet</servlet-name>
+        <servlet-class>control.MainServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NouveauUtilisateur</servlet-name>
+        <servlet-class>control.NouveauUtilisateur</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConnexionUtilisateur</servlet-name>
+        <servlet-class>control.ConnexionUtilisateur</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MainServlet</servlet-name>
+        <url-pattern>/MainServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NouveauUtilisateur</servlet-name>
+        <url-pattern>/NouveauUtilisateur</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConnexionUtilisateur</servlet-name>
+        <url-pattern>/ConnexionUtilisateur</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>MainServlet</welcome-file>
+    </welcome-file-list>
+</web-app>
